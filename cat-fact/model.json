@@ -1,0 +1,103 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "quick cat facts",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetNewFactIntent",
+                    "slots": [
+                        {
+                            "name": "action",
+                            "type": "actionType"
+                        },
+                        {
+                            "name": "pronoun",
+                            "type": "pronounType"
+                        },
+                        {
+                            "name": "article",
+                            "type": "articleType"
+                        }
+                    ],
+                    "samples": [
+                        "{action} {pronoun} {article} cat fact",
+                        "{action} {pronoun} cat fact",
+                        "{action} {article} cat fact",
+                        "{action} cat fact",
+                        "{article} cat fact"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "articleType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "a"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "the"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "pronounType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "me"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "us"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "actionType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "tell",
+                                "synonyms": [
+                                    "give",
+                                    "send",
+                                    "link",
+                                    "rehearse to",
+                                    "brief",
+                                    "get"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
