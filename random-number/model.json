@@ -1,0 +1,178 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "random integer generator",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "RandomNumberIntent",
+                    "slots": [
+                        {
+                            "name": "a",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "b",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "pronoun",
+                            "type": "pronounType"
+                        },
+                        {
+                            "name": "article",
+                            "type": "articleType"
+                        },
+                        {
+                            "name": "action",
+                            "type": "actionType"
+                        }
+                    ],
+                    "samples": [
+                        "{action} {pronoun} {article} a random number between {a} and {b}",
+                        "{action} {pronoun} {article} a number between {a} and {b}",
+                        "{action} {pronoun} {article} a random number from {a} to {b}",
+                        "{article} random number between {a} and {b}",
+                        "{article} random number from {a} to {b}",
+                        "random number between {a} and {b}",
+                        "random number from {a} to {b}",
+                        "{a} and {b}",
+                        "{a} to {b}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "pronounType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "me"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "us"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "actionType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "tell",
+                                "synonyms": [
+                                    "give",
+                                    "get",
+                                    "I want"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "articleType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "a"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "the"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "RandomNumberIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "a",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Intent-RandomNumberIntent.IntentSlot-a"
+                            }
+                        },
+                        {
+                            "name": "b",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Intent-RandomNumberIntent.IntentSlot-b"
+                            }
+                        },
+                        {
+                            "name": "article",
+                            "type": "articleType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "pronoun",
+                            "type": "pronounType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "action",
+                            "type": "actionType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Intent-RandomNumberIntent.IntentSlot-a",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What is the lower bound?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Intent-RandomNumberIntent.IntentSlot-b",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What is the upper bound?"
+                    }
+                ]
+            }
+        ]
+    }
+}
