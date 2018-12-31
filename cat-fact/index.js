@@ -137,6 +137,22 @@ const catData = {
       'cats have the largest eyes relative to their head size of any mammal.',
       'cats make very little noise when they walk around. The thick, soft pads on their paws allow them to sneak up on their prey -- or you!',
       'cats\' rough tongues can lick a bone clean of any shred of meat.',
-      'cats use their long tails to balance themselves when they\'re jumping or walking along narrow ledges.'
+      'cats use their long tails to balance themselves when they\'re jumping or walking along narrow ledges.',
+      'cats walk like camels and giraffes: They move both of their right feet first, then move both of their left feet. No other animals walk this way.',
+      'male cats are more likely to be left-pawed, while female cats are more likely to be right-pawed.',
+      'though cats can notice the fast movements of their prey, it often seems to them that slow-moving objects are actually stagnant.',
+      'some cats are ambidextrous, but 40 percent are either left- or right-pawed.',
+      'some cats can swim.',
+      'there are cats who have more than 18 toes. These extra-digit felines are referred to as being "polydactyl."',
+      'cats have a unique "vocabulary" with their owner -- each cat has a different set of vocalizations, purrs and behaviors.',
+      'cats have up to 100 different vocalizations -- dogs only have 10.',
+      'cats find it threatening when you make direct eye contact with them.',
+      'cats mark you as their territory when they rub their faces and bodies against you, as they have scent glands in those areas.',
+      'cats may yawn as a way to end a confrontation with another animal. Think of it as their "talk to the hand" gesture.',
+      'a cat\'s learning style is about the same as a 2- to 3-year-old child.',
+      'a cat\'s purr vibrates at a frequency of 25 to 150 hertz, which is the same frequency at which muscles and bones repair themselves.',
+      'cats dream, just like people do.',
+      'cats have contributed to the extinction of 33 different species.',
+      'cats perceive people as big, hairless cats'
     ]
 };
