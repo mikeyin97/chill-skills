@@ -118,6 +118,7 @@ const HelpHandler = {
   handle(handlerInput) {
     return handlerInput.responseBuilder
       .speak('Please answer with one, two, or three')
+      .reprompt('one, two, or three?')
       .getResponse();
   },
 };
