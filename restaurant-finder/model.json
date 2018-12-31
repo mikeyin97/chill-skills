@@ -1,0 +1,703 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "restaurant picker",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "RestaurantPickerIntent",
+                    "slots": [
+                        {
+                            "name": "cuisine",
+                            "type": "cuisineType"
+                        },
+                        {
+                            "name": "opennow",
+                            "type": "opennowType"
+                        },
+                        {
+                            "name": "location",
+                            "type": "AMAZON.US_CITY"
+                        },
+                        {
+                            "name": "price",
+                            "type": "priceType"
+                        },
+                        {
+                            "name": "pronoun",
+                            "type": "pronounType"
+                        },
+                        {
+                            "name": "action",
+                            "type": "actionType"
+                        }
+                    ],
+                    "samples": [
+                        "{action} {pronoun} a {price} {cuisine} restaurant in {location}",
+                        "{action} {pronoun} a {price} restaurant in {location}",
+                        "{action} {pronoun} a {cuisine} restaurant in {location}",
+                        "{action} {pronoun} a {cuisine} restaurant",
+                        "{action} {pronoun} a {price} restaurant",
+                        "{action} {pronoun} a restaurant",
+                        "{action} a {price} {cuisine} restaurant in {location}",
+                        "{action} a {price} restaurant in {location}",
+                        "{action} a {cuisine} restaurant in {location}",
+                        "{action} a {cuisine} restaurant",
+                        "{action} a {price} {cuisine} restaurant in {location} for me",
+                        "{action} a {price} restaurant in {location} for me",
+                        "{action} a {cuisine} restaurant in {location} for me",
+                        "{action} a {cuisine} restaurant for me",
+                        "{action} a {price} restaurant in {location} for me",
+                        "{action} a {price} restaurant for me",
+                        "{action} a restaurant",
+                        "{action} a restaurant for me"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "pronounType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "me"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "us"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "cuisineType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "chinese"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sushi"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "brunch"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "breakfast"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sandwich"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "vegan"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "vegetarian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "japanese"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yakitori"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "burger"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dessert"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "boba"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bubble tea"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "asian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "korean"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "indian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "barbeque"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "halal"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "soul food"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "salad"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "taiwanese"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "street food"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "healthy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "american"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wings"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pizza"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fast food"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "deli"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bakery"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "comfort food"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hawaiian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "filipino"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ramen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "noodle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "italian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thai"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seafood"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fusion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "new american"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gluten free friendly"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "czech"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hungarian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "himalayan"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ethopian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "african"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "german"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "french"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "middle eastern"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "vietnamese"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "brazilian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spanish"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mexican"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "taco"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cantonese"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pakistani"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "belgian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cajun"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "southern"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "burmese"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "greek"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "kebab"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shawarma"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "peruvian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "argentinian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tex mex"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "malaysian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "chinese"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "burrito"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "poke"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "kbbq"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "korean barbeque"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "moroccan"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "caribbean"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "irish"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thai"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lebanese"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "colombian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "any",
+                                "synonyms":[
+                                    "it does not matter",
+                                    "it doesn't matter",
+                                    "does not matter",
+                                    "doesn't matter",
+                                    "anything",
+                                    "anything is OK"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "opennowType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "yes",
+                                "synonyms": [
+                                    "open now",
+                                    "now",
+                                    "yes",
+                                    "yeah",
+                                    "affirmative",
+                                    "ye"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "no",
+                                "synonyms": [
+                                    "open anytime",
+                                    "anytime",
+                                    "no",
+                                    "doesn't matter",
+                                    "it does not matter",
+                                    "it doesn't matter",
+                                    "does not matter",
+                                    "either",
+                                    "nah",
+                                    "negative"                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "actionType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "tell",
+                                "synonyms": [
+                                    "give",
+                                    "get",
+                                    "I want",
+                                    "select",
+                                    "pick"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "priceType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "cheap",
+                                "synonyms": [
+                                    "inexpensive",
+                                    "low-price",
+                                    "low-cost",
+                                    "economical",
+                                    "affordable"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "medium",
+                                "synonyms": [
+                                    "medium-priced",
+                                    "mid-priced",
+                                    "average-priced"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "expensive",
+                                "synonyms": [
+                                    "high-end",
+                                    "superior",
+                                    "upscale",
+                                    "upmarket",
+                                    "first-class",
+                                    "fancy",
+                                    "top-tier",
+                                    "high-grade"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "any",
+                                "synonyms":[
+                                    "it doesn't matter",
+                                    "doesn't matter",
+                                    "it does not matter",
+                                    "does not matter",
+                                    "anything",
+                                    "anything is OK"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "RestaurantPickerIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "cuisine",
+                            "type": "cuisineType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Intent-RestaurantPickerIntent.IntentSlot-cuisine"
+                            }
+                        },
+                        {
+                            "name": "opennow",
+                            "type": "opennowType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Intent-RestaurantPickerIntent.IntentSlot-opennow"
+                            }
+                        },
+                        {
+                            "name": "location",
+                            "type": "AMAZON.US_CITY",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Intent-RestaurantPickerIntent.IntentSlot-location"
+                            }
+                        },
+                        {
+                            "name": "price",
+                            "type": "priceType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Intent-RestaurantPickerIntent.IntentSlot-price"
+                            }
+                        },
+                        {
+                            "name": "pronoun",
+                            "type": "pronounType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "action",
+                            "type": "actionType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Intent-RestaurantPickerIntent.IntentSlot-cuisine",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What type of food would you like to eat?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What cuisine type would you prefer?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Intent-RestaurantPickerIntent.IntentSlot-opennow",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Do you necessarily need a place that is open now - yes or no?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Intent-RestaurantPickerIntent.IntentSlot-location",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What city are you looking in?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Intent-RestaurantPickerIntent.IntentSlot-price",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you looking for something cheap, medium, expensive, or does it not matter?"
+                    }
+                ]
+            }
+        ]
+    }
+}
