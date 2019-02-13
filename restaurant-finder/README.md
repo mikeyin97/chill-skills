@@ -61,6 +61,14 @@ An interaction model is kind of like a schema where you define the behavior, fun
 <a name="lambda"></a>
 ## Lambda Function
 
+After matching the speech input to intent, a POST request is made to Lambda function endpoint. The skill is linked to the endpoint thgouh the ARN (amazon resource name) of the lambda function and the Skill ID of the skill. The lambda function is composed of index.js, package.json, and installed node_modules.
+
+The request, passed as a handlerInput into lambda endpoint, has a lot of information, like the name, the time, the viewport, etc. What we are most interested in is found in `handlerInput.requestEnvelope.request`, which allows us to determine the name and type of input, as well as the dialog state, if necessary. 
+
+**canHandle** - routes the request to the handler if it meets the requirements in this function.
+
+**handle** - handles the actual request.
+
 <a name="extensions"></a>
 ## Extensions
 
