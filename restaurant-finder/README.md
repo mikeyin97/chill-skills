@@ -42,9 +42,28 @@ to as specific as
 <a name="model"></a>
 ## Model
 
+An interaction model is kind of like a schema where you define the behavior, functions, actions, and types that your skill requires. It is also like a GUI which instead of having a graphical interface, a user makes a request based on their words. 
+
+**Invocation Name** - Name of the skill, used to start it up with the `LaunchIntent`. 
+
+**Intent** - Action to fulfil based on user speech input. Has a name and a list of sample utterances to invoke it. 
+
+**Slots** - Placeholder variables in your utterances, have a name and type. 
+
+**Type** - Your slots require a type. Amazon provides default types, like `AMAZON.US_CITY`, but you can define your own types with their own values and synonyms. 
+
+**Dialog** - A dialog interface allows for multi-turn conversations based. The dialog state is STARTED and IN_PROGRESS until the dialog ends, where it becomes COMPLETED.
+
+**Elicitation** - Ask for a specific slot to be filled. 
+
+**Prompts** - Questions Alexa ask to elicit a value for a slot. 
+
 <a name="lambda"></a>
 ## Lambda Function
 
 <a name="extensions"></a>
 ## Extensions
 
+1) Extend various other slots for the Yelp API.
+2) Write tests.
+3) Improve sample utterance to cover more cases. 
