@@ -75,3 +75,4 @@ The request, passed as a handlerInput into lambda endpoint, has a lot of informa
 1) Extend various other slots for the Yelp API.
 2) Write tests.
 3) Improve sample utterance to cover more cases. 
+4) Update slot logic
