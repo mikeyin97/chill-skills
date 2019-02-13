@@ -69,6 +69,18 @@ The request, passed as a handlerInput into lambda endpoint, has a lot of informa
 
 **handle** - handles the actual request.
 
+After all the slots have been filled, the dialog state is completed and a call is made to `getSlotValues` which reformats the slot values into something like this. 
+
+```
+{ pronoun: { synonym: 'me', resolved: 'me', isValidated: true },
+price: { synonym: 'inexpensive', resolved: 'cheap', isValidated: true },
+cuisine: { synonym: 'Chinese', resolved: 'chinese', isValidated: true },
+opennow: { synonym: 'nah', resolved: 'no', isValidated: true },
+action: { synonym: 'recommend', resolved: 'tell', isValidated: true },
+location: { synonym: 'San Francisco', resolved: 'San Francisco', isValidated: true } }
+```
+which we can then use to determine the parameters to pass into Yelp's API. If it is not validated, an attempt will be made to use the default synonym passed in. 
+
 <a name="extensions"></a>
 ## Extensions
 
