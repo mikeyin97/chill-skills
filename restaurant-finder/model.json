@@ -61,7 +61,8 @@
                         "{action} a {price} restaurant in {location} for me",
                         "{action} a {price} restaurant for me",
                         "{action} a restaurant",
-                        "{action} a restaurant for me"
+                        "{action} a restaurant for me",
+                        "{action} me a restaurant"
                     ]
                 },
                 {
