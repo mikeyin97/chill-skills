@@ -1,7 +1,5 @@
 # Restaurant Recommender
 
-<img src="https://i.imgur.com/RxZsSo4.jpg" />
-
 No matter who I hang out with, it always seems as though we can never decide on what to eat. No one seems to ever want to make the final choice on a restaurant. I’ve had times where my friends and I have spent up to an hour deciding on a place to eat. 
 
 To solve this problem, I designed the **Restaurant Recommender** skill to provide recommendations on where to eat based on given criteria. Just start up the skill with “Alexa, open restaurant recommender”, follow the instructions, and Alexa will recommend you a great restaurant!
