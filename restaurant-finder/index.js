@@ -4,6 +4,7 @@ var request = require('request');
 
 /* INTENT HANDLERS */
 
+// upon initial launch of the skill
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
@@ -26,6 +27,8 @@ const InProgressRestaurantPickerIntent = {
   },
   handle(handlerInput) {
     const currentIntent = handlerInput.requestEnvelope.request.intent;
+    // delegateDirective essentially means that, if the dialog is not complete, alexa will select
+    // an appropriate next step from the dialog model
     return handlerInput.responseBuilder
         .addDelegateDirective(currentIntent)
         .getResponse();
@@ -38,8 +41,8 @@ const CompletedRestaurantPickerIntent = {
         const request = handlerInput.requestEnvelope.request;
         return request.type === 'IntentRequest' && request.intent.name === 'RestaurantPickerIntent';
     },
-
     async handle(handlerInput) {
+        // async indicates an asynchronous piece of code that ALWAYS returns a promise
         console.log("Start");
         const filledSlots = handlerInput.requestEnvelope.request.intent.slots;
         const slotValues = getSlotValues(filledSlots);
@@ -68,6 +71,11 @@ const CompletedRestaurantPickerIntent = {
         }
         url += "&location=";
         url += location;
+        // in this promise, we make a request to the constructed yelp api.
+        // after the response has been returned, we handle it and then resolve the promise
+        // since at this point, all the code that needs to be run in the asyncronous executor has completed
+        // and we finally resolve the promise. We need a promise because the get request needs to be 
+        // completed before the next steps.
         return new Promise((resolve, reject) => {
           request.get(url, {
             'auth': {
@@ -175,7 +183,8 @@ const ErrorHandler = {
   },
 };
 
-
+// returns an object where each slotvalue has its synonym (the initial value of its type), if it successfully matched, and if it is validated
+// will try to match all, but function can continue even if some do not match.
 function getSlotValues(filledSlots) {
     const slotValues = {};
 
