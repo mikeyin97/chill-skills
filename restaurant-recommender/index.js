@@ -48,17 +48,20 @@ const CompletedRestaurantPickerIntent = {
         const slotValues = getSlotValues(filledSlots);
         var finalOutput = "";
         var url = 'http://api.yelp.com/v3/businesses/search?term=restaurant';
-        var cuisine = String(slotValues.cuisine.synonym).toLowerCase().split(' ').join('+');
-        var opennow = String(slotValues.opennow.synonym).toLowerCase().split(' ').join('+');
-        var price = String(slotValues.price.synonym).toLowerCase().split(' ').join('+');
-        var location = String(slotValues.location.synonym).toLowerCase().split(' ').join('+');
+        var cuisine = String(slotValues.cuisine.resolved).toLowerCase().split(' ').join('+');
+        var opennow = String(slotValues.opennow.resolved).toLowerCase().split(' ').join('+');
+        var price = String(slotValues.price.resolved).toLowerCase().split(' ').join('+');
+        var location = String(slotValues.location.resolved).toLowerCase().split(' ').join('+');
+
         if (cuisine !== "any") {
           url += "+";
           url += cuisine;
         }
+
         if (opennow === "yes") {
           url += "&open_now=true";
         }
+
         if (price !== "any") {
           url += "&price=";
           if (price == "cheap"){
@@ -69,8 +72,10 @@ const CompletedRestaurantPickerIntent = {
             url += "3,4";
           }
         }
+
         url += "&location=";
         url += location;
+
         // in this promise, we make a request to the constructed yelp api.
         // after the response has been returned, we handle it and then resolve the promise
         // since at this point, all the code that needs to be run in the asyncronous executor has completed
@@ -191,7 +196,7 @@ function getSlotValues(filledSlots) {
     console.log(`The filled slots: ${JSON.stringify(filledSlots)}`);
     Object.keys(filledSlots).forEach((item) => {
         const name = filledSlots[item].name;
-
+        // name is the name of the slot (eg cuisine)
         if (filledSlots[item] &&
         filledSlots[item].resolutions &&
         filledSlots[item].resolutions.resolutionsPerAuthority[0] &&
@@ -200,8 +205,8 @@ function getSlotValues(filledSlots) {
         switch (filledSlots[item].resolutions.resolutionsPerAuthority[0].status.code) {
             case 'ER_SUCCESS_MATCH':
             slotValues[name] = {
-                synonym: filledSlots[item].value,
-                resolved: filledSlots[item].resolutions.resolutionsPerAuthority[0].values[0].value.name,
+                synonym: filledSlots[item].value, //the value of the slot
+                resolved: filledSlots[item].resolutions.resolutionsPerAuthority[0].values[0].value.name, //the default synonym it resolves to
                 isValidated: true,
             };
             break;
