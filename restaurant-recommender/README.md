@@ -89,3 +89,4 @@ which we can then use to determine the parameters to pass into Yelp's API. If it
 3) Improve sample utterance to cover more cases. 
 4) Update slot logic
 5) Location - find a restaurant near me, find a restaurant within 5 miles of me. 
+6) Extend the API with offset and limit to increase selection
