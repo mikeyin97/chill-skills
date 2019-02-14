@@ -91,13 +91,9 @@ const CompletedRestaurantPickerIntent = {
             body = JSON.parse(body);
             if (body["total"] === 0) {
               finalOutput += "Sorry, but no restaurants match your search criteria.";
-            } else if (body["total"] < 4) {
-              finalOutput += "Your suggested restaurant is ";
-              finalOutput += body["businesses"][0]["name"];
-              finalOutput += " located at ";
-              finalOutput += body["businesses"][0]["location"]["address1"];
             } else {
-              var randomNum = Math.floor(Math.random() * 3);
+              var randomNum = Math.floor(Math.random() * (body["total"]-1);
+              // eg if 50 restaurants, want a random int between 0 and 49 inclusive
               finalOutput += "Your suggested restaurant is ";
               finalOutput += body["businesses"][randomNum]["name"];
               finalOutput += " located at ";
