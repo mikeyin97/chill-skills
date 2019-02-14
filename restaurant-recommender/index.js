@@ -92,8 +92,10 @@ const CompletedRestaurantPickerIntent = {
             if (body["total"] === 0) {
               finalOutput += "Sorry, but no restaurants match your search criteria.";
             } else {
-              var randomNum = Math.floor(Math.random() * (body["total"]-1);
-              // eg if 50 restaurants, want a random int between 0 and 49 inclusive
+              var randomNum = Math.floor(Math.random() * Math.min(body["total"], 20);
+              // Yelp API only goes up to 20 per page by default. (unless you change offset or limit)
+              // if less than 20 items, we choose a random one from all the items.
+              // if more than 20 items, we choose a random one from the first page (so from 0 to 19 inclusive).
               finalOutput += "Your suggested restaurant is ";
               finalOutput += body["businesses"][randomNum]["name"];
               finalOutput += " located at ";
